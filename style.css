@@ -1,0 +1,46 @@
+body {
+  text-align: center;
+  background-color: rgb(161, 218, 245);
+}
+
+#gameboard {
+  text-align: center;
+  height: 250px;
+   width:40%;
+  display: grid;
+  display:flex;
+
+  flex-wrap: wrap;
+  justify-content: center;
+  align-content: center;
+  margin-left: 30%;
+   
+}
+.square {
+  display: flex;
+  order: 2px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width:25%;
+  height:33%;
+  text-align: center;
+  font-size: 80px;
+   
+   
+}
+#controls{
+    display:flex;
+    text-align: center;
+    justify-content: center;
+    margin-top:20px;
+}
+/* Add right border for the first and second squares in each row */
+.square:nth-child(3n + 1), .square:nth-child(3n + 2) {
+    border-right: 2px solid black;
+}
+
+/* Add bottom border for the first two rows of squares */
+.square:nth-child(-n + 6) {
+    border-bottom: 2px solid black;
+}
