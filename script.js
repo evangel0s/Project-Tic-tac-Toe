@@ -35,7 +35,7 @@ const Game = (() => {
     currentPlayerIndex = 0;
     gameOver = false;
     Gameboard.render();
-
+   
     const squares = document.querySelectorAll(".square");
     squares.forEach((square) => {
       square.addEventListener("click", handleClick);
@@ -45,7 +45,7 @@ const Game = (() => {
   const handleClick = (event) => {
     let index = parseInt(event.target.id.split("-")[1]);
     alert(index);
-  };
+  }
   return {
     start,
     handleClick,
