@@ -106,13 +106,13 @@ h1 {
 #start-button {
   margin:5px;
   
-  background-color:rgb(153, 255, 255);
+  background-color:rgb(172, 179, 179);
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 #restart-button {
    
   margin:5px;
-  background-color: rgb(153, 255, 255);
+  background-color: rgb(172, 179, 179);
   font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
 }
 .gamediv {
