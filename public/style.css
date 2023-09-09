@@ -9,48 +9,103 @@ body {
   margin: 0px;
   width: 100%;
   height: 100%;
-  font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif
+  font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
 }
 .upper {
   display: flex;
   align-items: center;
   width: 100%;
   justify-content: center;
-  height: 40vh;
-}
-.box{
+  height: auto;
    
-  font-weight:bold;
-  
 }
-.box1{
-  color:rgb(29, 49, 224);
-}
-.box2{
-  color:rgb(243, 141, 110)
+.box {
+  font-weight: bold;
 }
 
 h1 {
   margin-top: 10px;
   margin-bottom: 0px;
   font-size: 90px;
-  color:aqua
+  color: aqua;
 }
 #gameboard {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
 }
 #message {
-   
-  font-size:100px;
-  color:rgb(255, 255, 255);
+  font-size: 80px;
+  color: rgb(255, 255, 255);
   border-radius: 10px;
 }
-#start-button{
-  margin:5px;
+.active-player {
+  background-color: #e29cfd;
+  transform: scale(1.1);
+  transition: all 0.3s;
+  font-size: 1.2em;
 }
-#restart-button{
-  margin:5px;
+#errorMessage {
+  font-size: 1.5rem;
+  color: black;
+  transition: all 0.5 ease;
+}
+.errorShow {
+  color: #e29cfd;
+  font-size: 2rem;
+  animation: shakeAndScale 0.5s, colorChange 1s infinite alternate;
+}
+@keyframes shakeAndScale {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg) scale(1);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg) scale(1.05);
+  }
+  20% {
+    transform: translate(-2px, 0px) rotate(1deg) scale(1);
+  }
+  30% {
+    transform: translate(1px, 2px) rotate(0deg) scale(1.05);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg) scale(1);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg) scale(1.05);
+  }
+  60% {
+    transform: translate(-1px, 1px) rotate(0deg) scale(1);
+  }
+  70% {
+    transform: translate(1px, 1px) rotate(-1deg) scale(1.05);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg) scale(1);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg) scale(1.05);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg) scale(1);
+  }
+}
+ 
+
+@keyframes colorChange {
+  0%,
+  40% {
+    color: #e29cfd;
+  }
+  100% {
+    color: black;
+  }
+}
+
+#start-button {
+  margin: 5px;
+}
+#restart-button {
+  margin: 5px;
 }
 .gamediv {
   margin-left: 20px;
@@ -58,8 +113,8 @@ h1 {
   width: 300px;
   height: 300px;
 }
-.controls{
-display:flex;
+.controls {
+  display: flex;
 }
 .square {
   height: 100px;
@@ -68,7 +123,7 @@ display:flex;
   font-size: 80px;
   border: 4px solid #e29cfd;
   box-sizing: border-box;
-  font-family:'Courier New', Courier, monospace ;
+  font-family: "Courier New", Courier, monospace;
 }
 button {
   width: 100px;
@@ -102,37 +157,75 @@ input {
 .square:nth-child(-n + 6) {
   border-bottom: 0px solid rgb(207, 92, 218);
 }
-@media only screen and (max-width: 600px) {
+@media (max-width: 542px) {
   /* Styles for screens smaller than 600px */
   #gameboard {
-    width: 90%;
+    width: 100%;
     height: auto;
   }
-  .gamediv{
-    width: 80%;
-    margin: 0 auto;
+  .gamediv {
+    width: 240px;
+    height:240px;
   }
+  .square {
+    height: 90px;
+    width: 90px;
+    font-size: 70px;
+  }
+  .upper {
+    min-width: 100px;
+    display: flex;
+  }
+
+  .box {
+    width: 80px; /* Adjust this value as necessary */
+    font-size: 18px; /* Adjust font size to fit the reduced width */
+  }
+
+  h1{
+    font-size: 60px ;
+  }
+
   .square {
     height: 80px;
     width: 80px;
-    font-size: 70px;
+    font-size: 60px; /* Adjust font size to fit the reduced square size */
   }
-  .upper{
-  min-width: 100px;
+}
+@media (max-width: 500px) {
+  .upper {
+      
+    flex-direction: column;
+    align-items: center;
   }
-
-.box {
-  width: 80px; /* Adjust this value as necessary */
-  font-size: 18px; /* Adjust font size to fit the reduced width */
+  .gamediv {
+    height: 240px;
+    order: -1;
+    margin-bottom: 10px;
+  }
+  
+  .box1, .box2 {
+    display: inline-block;     
+    margin: 0; /* Remove any margin */
+    order: 1;
+    
 }
-
-.gamediv {
-  width: 240px; /* Reduce the game div width */
+h1{
+  font-size: 50px ;
 }
-
-.square {
-  height: 80px;
-  width: 80px;
-  font-size: 60px; /* Adjust font size to fit the reduced square size */
+.box{
+  width:92px;
+  height:35px;
+}
+.controls{
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+}
+ #start-button{
+  margin:0;
+}
+#restart-button{
+  margin:0;
 }
 }

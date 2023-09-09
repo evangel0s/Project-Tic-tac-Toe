@@ -1,7 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="UTF-8" />
+     
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" charset="UTF-8">
+
     <title>Tic-Tac-Toe</title>
     <link rel="stylesheet" href="style.css" />
   </head>
@@ -13,6 +15,7 @@
       <div class="gamediv">
         <div id="gameboard"></div>
       </div>
+       
       <input class="box box2" type="text" id="Player2" placeholder="Player 2" />
     </div>
     <div id="controls">
@@ -23,7 +26,8 @@
     </div>
     <div id="message"></div>
     <div id="result-display"></div>
-    <script src="/socket.io/socket.io.js"></script>
+    <div id="errorMessage"></div>
+    <!-- <script src="/socket.io/socket.io.js"></script> -->
     <script src="script.js"></script>
   </body>
 </html>
